@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "MDClub",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "mdclub",
+          "servicePath": "/",
+          "uploadType": "image",
+          "cpu": 1,
+          "mem": 2,
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/mdclub-tcb:1.0"
+          },
+          "containerPort": 80,
+          "envVariables": {
+            "DB_HOST": "{{env.DB_IP}}",
+            "DB_NAME": "mdclub",
+            "DB_PORT": "{{env.DB_PORT}}",
+            "DB_USER": "{{env.MYSQL_USERNAME}}",
+            "DB_PASS": "{{env.MYSQL_PASSWORD}}",
+            "ADMIN_USER": "{{env.ADMIN_PASSWORD}}",
+            "ADMIN_PASS": "{{env.ADMIN_PASSWORD}}",
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.mdclub.Properties.InstanceId}"
+          },
+          "initialDelaySeconds": 20
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CynosDB",
+          "name": "mdclub",
+          "envMap": {
+            "IP": "DB_IP",
+            "PORT": "DB_PORT",
+            "USERNAME": "MYSQL_USERNAME",
+            "PASSWORD": "MYSQL_PASSWORD"
+          }
+        }
+      ],
+      "environment": {
+        "ADMIN_USER": {
+          "description": "用户名",
+          "required": true,
+          "default": "admin"
+        },
+        "ADMIN_PASS": {
+          "description": "用户密码",
+          "required": true,
+          "default": "admin@123"
+        }
+      }
+    }
+  }
+}
