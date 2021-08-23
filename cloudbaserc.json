@@ -26,19 +26,12 @@
             "ADMIN_PASS": "{{env.ADMIN_PASSWORD}}",
             "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.mdclub.Properties.InstanceId}"
           },
-          "initialDelaySeconds": 20,
-          "volumeMounts": {
-            "/app": "mdclub-cfs"
-          }
+          "initialDelaySeconds": 10
         }
       }
     },
     "requirement": {
       "addons": [
-        {
-          "type": "CFS",
-          "name": "mdclub-cfs"
-        },
         {
           "type": "CynosDB",
           "name": "mdclub",
