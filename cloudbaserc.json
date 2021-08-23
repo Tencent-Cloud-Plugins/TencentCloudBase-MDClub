@@ -13,7 +13,7 @@
           "cpu": 1,
           "mem": 2,
           "imageInfo": {
-            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/mdclub-tcb:1.0"
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/mdclub-tcb:1.0.1"
           },
           "containerPort": 80,
           "envVariables": {
