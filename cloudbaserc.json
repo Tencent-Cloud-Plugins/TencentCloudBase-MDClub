@@ -28,7 +28,7 @@
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
-            "/app/public/upload": "mdclub-cfs"
+            "/app/public/upload/user-avatar": "mdclub-cfs"
           }
         }
       }
