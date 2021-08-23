@@ -13,7 +13,7 @@
           "cpu": 1,
           "mem": 2,
           "imageInfo": {
-            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/mdclub-tcb:1.0.1"
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/mdclub-tcb:1.0.2"
           },
           "containerPort": 80,
           "envVariables": {
@@ -28,7 +28,7 @@
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
-            "/app/public/upload/user-avatar": "mdclub-cfs"
+            "/app": "mdclub-cfs"
           }
         }
       }
