@@ -26,7 +26,7 @@
             "ADMIN_PASS": "{{env.ADMIN_PASSWORD}}",
             "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.mdclub.Properties.InstanceId}"
           },
-          "initialDelaySeconds": 20,
+          "initialDelaySeconds": 10,
           "volumeMounts": {
             "/app": "mdclub-cfs"
           }
